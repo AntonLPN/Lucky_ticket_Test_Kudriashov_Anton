@@ -14,6 +14,10 @@ namespace Lucky_ticket_Test_Kudriashov_Anton
 
             do
             {
+              
+
+
+
                 //int enteredNumber = 0;//введенное пользователем число
                 int sumFirstHalfTicket = 0;//сумма перввой половины билета
                 int sumSecondtHalfTicket = 0;//сумма второй половины билета
@@ -34,15 +38,15 @@ namespace Lucky_ticket_Test_Kudriashov_Anton
                 int num = 0;
                 do
                 {
-                  
+
                     Console.Write("Enter your ticket numbers >>");
                     //проверка на коректность ввода данных
                     try
                     {
-                        // Int32.TryParse(Console.ReadLine(), out enteredNumber);
+
                         enteredNumber = Console.ReadLine();
 
-                         num = Int32.Parse(enteredNumber);
+                        num = Int32.Parse(enteredNumber);
 
 
                         //если пользоваетль случайно ввел вместе с числом букву или ввел в формате с плавающей точкой или больше 8 значного числа делаем исключение
@@ -61,16 +65,16 @@ namespace Lucky_ticket_Test_Kudriashov_Anton
                     }
 
 
-                } while (num==0);
+                } while (num == 0);
 
-              
+
                 Console.WriteLine();
 
                 //разбиваем число на отдельные цифры для этого конвертирую число в string 
                 //используем LINQ
                 //Забрасываем числа в List
                 List<int> ListTiketNumber = enteredNumber.ToCharArray().Select(x => Convert.ToInt32(x.ToString())).ToList<int>();
-              
+
                 //добавляем нули в начало билета (при необходимости) для этого используем рекурсивный метод
                 ListTiketNumber = CountZeroAddRecursion(ListTiketNumber.Count, ListTiketNumber);
 
@@ -106,12 +110,14 @@ namespace Lucky_ticket_Test_Kudriashov_Anton
                     Console.WriteLine("**********************************");
                 }
 
-              
-                    Console.WriteLine("\n\n\n");
-                    Console.WriteLine("Enter 1 to try agan ");
-                    Console.WriteLine("Enter 0 for the EXIT ");
-                    int.TryParse(Console.ReadLine(), out menu);
-              
+
+                Console.WriteLine("\n\n\n");
+                Console.WriteLine("Enter 1 to try agan ");
+                Console.WriteLine("Enter 0 for the EXIT ");
+                int.TryParse(Console.ReadLine(), out menu);
+            
+
+
             } while (menu!=0);
 
             Console.Clear();
